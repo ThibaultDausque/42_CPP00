@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 22:17:23 by thibault          #+#    #+#             */
-/*   Updated: 2025/03/12 22:22:51 by thibault         ###   ########.fr       */
+/*   Updated: 2025/03/14 20:45:19 by thibault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,19 @@
 
 # include <iostream>
 # include <string>
+# include "Contact.hpp"
 
 class PhoneBook
 {
 	public:
-	PhoneBook(/* args */);
+	PhoneBook();
 	~PhoneBook();
+	void	add_contact();
+	void	search_contact();
 	
 	private:
-	int		nb_of_contact;
+	int		index;
+	Contact	contact[8];
 };
 
-PhoneBook::PhoneBook(/* args */)
-{
-}
-
-PhoneBook::~PhoneBook()
-{
-}
 #endif
