@@ -6,13 +6,11 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:21:13 by thibault          #+#    #+#             */
-/*   Updated: 2025/03/14 20:42:52 by thibault         ###   ########.fr       */
+/*   Updated: 2025/03/19 12:12:47 by thibault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-
-using namespace std;
 
 Contact::Contact(void)
 {
@@ -24,47 +22,52 @@ Contact::~Contact(void)
 	return ;
 }
 
-string	Contact::get_fname()
+std::string	Contact::get_fname()
 {
 	return (this->m_first_name);
 }
 
-string	Contact::get_lname()
+std::string	Contact::get_lname()
 {
 	return (this->m_last_name);
 }
 
-int	Contact::get_num()
+std::string	Contact::get_nname()
+{
+	return (this->m_nickname);
+}
+
+std::string	Contact::get_num()
 {
 	return (this->m_phone_num);
 }
 
-string	Contact::get_darksec()
+std::string	Contact::get_darksec()
 {
 	return (this->m_dark_secret);
 }
 
-void	Contact::set_fname(string str)
+void	Contact::set_fname(std::string str)
 {
 	this->m_first_name = str;
 }
 
-void	Contact::set_lname(string str)
+void	Contact::set_lname(std::string str)
 {
 	this->m_last_name = str;
 }
 
-void	Contact::set_nname(string str)
+void	Contact::set_nname(std::string str)
 {
 	this->m_nickname = str;
 }
 
-void	Contact::set_num(int num)
+void	Contact::set_num(std::string str)
 {
-	this->m_phone_num = num;
+	this->m_phone_num = str;
 }
 
-void	Contact::set_darksec(string str)
+void	Contact::set_darksec(std::string str)
 {
 	this->m_dark_secret = str;
 }

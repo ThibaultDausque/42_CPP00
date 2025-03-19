@@ -6,7 +6,7 @@
 #    By: thibault <thibault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/16 15:52:38 by thibault          #+#    #+#              #
-#    Updated: 2025/03/16 15:55:53 by thibault         ###   ########.fr        #
+#    Updated: 2025/03/19 16:25:46 by thibault         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,25 +14,27 @@ CC = g++
 SRCS = Contact.cpp \
 	PhoneBook.cpp \
 	main.cpp
-OBJS = $(SRCS:.cpp=.o)
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
+OBJS_DIR = objs
+OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
 NAME = phonebook
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+	@$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp
+$(OBJS_DIR)/%.o: %.cpp
+	@mkdir -p $(@D)
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	@rm -rf $(OBJS_DIR)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean $(NAME)
 
