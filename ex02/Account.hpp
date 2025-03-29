@@ -16,8 +16,11 @@
 //                               Account Class                                //
 // ************************************************************************** //
 
-class Account {
+#include <ctime>
+#include <iostream>
+#include <string>
 
+class Account {
 
 public:
 
@@ -66,4 +69,4 @@ private:
 // ************************************************************************** //
 
 
-#endif /* __ACCOUNT_H__ */
+#endif
