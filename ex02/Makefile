@@ -6,7 +6,7 @@
 #    By: tdausque <tdausque@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/29 12:38:38 by tdausque          #+#    #+#              #
-#    Updated: 2025/03/29 12:40:11 by tdausque         ###   ########.fr        #
+#    Updated: 2025/03/30 11:56:57 by tdausque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM = rm -f
 OBJS_DIR = objs
 OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
-NAME = phonebook
+NAME = account
 
 all: $(NAME)
 
