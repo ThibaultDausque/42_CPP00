@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:44:43 by thibault          #+#    #+#             */
-/*   Updated: 2025/04/14 11:47:41 by tdausque         ###   ########.fr       */
+/*   Updated: 2025/04/14 12:11:34 by tdausque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,11 +112,19 @@ void	PhoneBook::search_contact(void)
 			std::cout << std::setw(10);
 			std::cout << ft_strtrim(m_contact[i].get_fname());
 		}
-		else if (m_contact[i].get_fname().size() > 10)
+		else
 		{
-			std::cout << std::setw(9);
-			std::cout << ft_strtrim(m_contact[i].get_fname()).substr(0, 9);
-			std::cout << ".";
+			if (ft_strtrim(m_contact[i].get_fname()).size() > 10)
+			{
+				std::cout << std::setw(9);
+				std::cout << ft_strtrim(m_contact[i].get_fname()).substr(0, 9);
+				std::cout << ".";
+			}
+			else
+			{
+				std::cout << std::setw(10);
+				std::cout << ft_strtrim(m_contact[i].get_fname()).substr(0, 9);
+			}
 		}
 		std::cout << "|";
 		if (m_contact[i].get_lname().size() <= 10)
@@ -124,11 +132,19 @@ void	PhoneBook::search_contact(void)
 			std::cout << std::setw(10);
 			std::cout << ft_strtrim(m_contact[i].get_lname());
 		}
-		else if (m_contact[i].get_lname().size() > 10)
+		else
 		{
-			std::cout << std::setw(9);
-			std::cout << ft_strtrim(m_contact[i].get_lname()).substr(0, 9);
-			std::cout << ".";
+			if (ft_strtrim(m_contact[i].get_lname()).size() > 10)
+			{
+				std::cout << std::setw(9);
+				std::cout << ft_strtrim(m_contact[i].get_lname()).substr(0, 9);
+				std::cout << ".";
+			}
+			else
+			{
+				std::cout << std::setw(10);
+				std::cout << ft_strtrim(m_contact[i].get_lname()).substr(0, 9);
+			}
 		}
 		std::cout << "|";
 		if (m_contact[i].get_nname().size() <= 10)
@@ -138,8 +154,17 @@ void	PhoneBook::search_contact(void)
 		}
 		else if (m_contact[i].get_nname().size() > 10)
 		{
-			std::cout << std::setw(9);
-			std::cout << ft_strtrim(m_contact[i].get_nname()).substr(0, 9);
+			if (ft_strtrim(m_contact[i].get_nname()).size())
+			{
+				std::cout << std::setw(9);
+				std::cout << ft_strtrim(m_contact[i].get_nname()).substr(0, 9);
+				std::cout << ".";
+			}
+			else
+			{
+				std::cout << std::setw(9);
+				std::cout << ft_strtrim(m_contact[i].get_nname()).substr(0, 9);
+			}
 		}
 		std::cout << "|";
 		std::cout << std::endl;
