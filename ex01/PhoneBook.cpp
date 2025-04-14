@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:44:43 by thibault          #+#    #+#             */
-/*   Updated: 2025/04/12 17:01:43 by tdausque         ###   ########.fr       */
+/*   Updated: 2025/04/14 11:47:41 by tdausque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,6 @@ void	PhoneBook::search_contact(void)
 		{
 			std::cout << std::setw(9);
 			std::cout << ft_strtrim(m_contact[i].get_nname()).substr(0, 9);
-			std::cout << ".";
 		}
 		std::cout << "|";
 		std::cout << std::endl;
