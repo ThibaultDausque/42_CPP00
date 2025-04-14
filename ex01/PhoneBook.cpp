@@ -6,7 +6,7 @@
 /*   By: thibault <thibault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 20:44:43 by thibault          #+#    #+#             */
-/*   Updated: 2025/04/14 12:16:01 by tdausque         ###   ########.fr       */
+/*   Updated: 2025/04/14 12:28:29 by tdausque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,9 @@ std::string	ft_strtrim(std::string str)
 	while (i < str.length() && std::isspace(str[i]))
 		i++;
 	j = str.length();
-	while (j >= i && std::isspace(str[j]))
+	while (j > i && std::isspace(str[j - 1]))
 		j--;
-	return (str.substr(i, j - i));
+	return (str.substr(i, j));
 }
 
 // dessiner le tableau
@@ -154,7 +154,7 @@ void	PhoneBook::search_contact(void)
 		}
 		else if (m_contact[i].get_nname().size() > 10)
 		{
-			if (ft_strtrim(m_contact[i].get_nname()).size())
+			if (ft_strtrim(m_contact[i].get_nname()).size() > 10)
 			{
 				std::cout << std::setw(9);
 				std::cout << ft_strtrim(m_contact[i].get_nname()).substr(0, 9);
